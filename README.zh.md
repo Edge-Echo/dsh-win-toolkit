@@ -1,5 +1,12 @@
 # dsh-win-toolkit
 
+![dsh-win-toolkit](https://raw.githubusercontent.com/Edge-Echo/dsh-win-toolkit/main/banner.svg)
+
+[![npm version](https://img.shields.io/npm/v/dsh-win-toolkit?color=0078d4&logo=npm)](https://www.npmjs.com/package/dsh-win-toolkit)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-win-toolkit?color=6366f1)](https://www.npmjs.com/package/dsh-win-toolkit)
+[![license](https://img.shields.io/npm/l/dsh-win-toolkit?color=0078d4)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Edge-Echo/dsh-win-toolkit?color=6366f1)](https://github.com/Edge-Echo/dsh-win-toolkit)
+
 **面向 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) 的 Windows 原生能力包。**
 
 给 dsh 里的 agent 装上真正的 Windows 技能——剪贴板、系统通知、hosts 文件查看、网络诊断，全部通过安全参数化的 PowerShell 实现。无需额外安装，当前工具集无需管理员权限。

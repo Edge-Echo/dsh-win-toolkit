@@ -1,5 +1,12 @@
 # dsh-win-toolkit
 
+![dsh-win-toolkit](https://raw.githubusercontent.com/Edge-Echo/dsh-win-toolkit/main/banner.svg)
+
+[![npm version](https://img.shields.io/npm/v/dsh-win-toolkit?color=0078d4&logo=npm)](https://www.npmjs.com/package/dsh-win-toolkit)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-win-toolkit?color=6366f1)](https://www.npmjs.com/package/dsh-win-toolkit)
+[![license](https://img.shields.io/npm/l/dsh-win-toolkit?color=0078d4)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Edge-Echo/dsh-win-toolkit?color=6366f1)](https://github.com/Edge-Echo/dsh-win-toolkit)
+
 **Windows-native capability pack for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh).**
 
 Gives your dsh agent real Windows superpowers — clipboard, system notifications, hosts file inspection, and network diagnostics — backed by safe, parameterized PowerShell. No extra installs, no admin rights required for the current toolset.

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="dsh-win-toolkit — Windows-native capability pack for DeepSeek Harness">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#132038"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078d4"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b2a44"/>
+      <stop offset="100%" stop-color="#14203a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#0078d4" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0078d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="15%" cy="90%" r="55%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#glow)"/>
+  <rect width="1280" height="640" fill="url(#glow2)"/>
+
+  <!-- 背景网格点 -->
+  <g fill="#ffffff" opacity="0.05">
+    <circle cx="60" cy="60" r="3"/><circle cx="180" cy="60" r="3"/><circle cx="300" cy="60" r="3"/>
+    <circle cx="420" cy="60" r="3"/><circle cx="540" cy="60" r="3"/><circle cx="660" cy="60" r="3"/>
+    <circle cx="780" cy="60" r="3"/><circle cx="900" cy="60" r="3"/><circle cx="1020" cy="60" r="3"/>
+    <circle cx="1140" cy="60" r="3"/><circle cx="1220" cy="60" r="3"/>
+    <circle cx="60" cy="180" r="3"/><circle cx="180" cy="180" r="3"/><circle cx="300" cy="180" r="3"/>
+    <circle cx="1020" cy="180" r="3"/><circle cx="1140" cy="180" r="3"/><circle cx="1220" cy="180" r="3"/>
+    <circle cx="60" cy="300" r="3"/><circle cx="180" cy="300" r="3"/><circle cx="300" cy="300" r="3"/>
+    <circle cx="1020" cy="300" r="3"/><circle cx="1140" cy="300" r="3"/><circle cx="1220" cy="300" r="3"/>
+    <circle cx="60" cy="420" r="3"/><circle cx="180" cy="420" r="3"/><circle cx="300" cy="420" r="3"/>
+    <circle cx="1020" cy="420" r="3"/><circle cx="1140" cy="420" r="3"/><circle cx="1220" cy="420" r="3"/>
+    <circle cx="60" cy="540" r="3"/><circle cx="180" cy="540" r="3"/><circle cx="300" cy="540" r="3"/>
+    <circle cx="420" cy="540" r="3"/><circle cx="1140" cy="540" r="3"/><circle cx="1220" cy="540" r="3"/>
+  </g>
+
+  <!-- 右上窗口装饰 -->
+  <g>
+    <rect x="880" y="86" width="180" height="130" rx="12" fill="none" stroke="#0078d4" stroke-opacity="0.35" stroke-width="2"/>
+    <rect x="892" y="100" width="64" height="44" rx="6" fill="#0078d4" fill-opacity="0.25"/>
+    <rect x="964" y="100" width="84" height="44" rx="6" fill="#0078d4" fill-opacity="0.12"/>
+    <rect x="892" y="152" width="148" height="30" rx="6" fill="#6366f1" fill-opacity="0.18"/>
+    <rect x="892" y="188" width="100" height="14" rx="4" fill="#ffffff" fill-opacity="0.14"/>
+    <rect x="1002" y="188" width="46" height="14" rx="4" fill="#ffffff" fill-opacity="0.08"/>
+  </g>
+  <circle cx="940" cy="330" r="120" fill="none" stroke="#6366f1" stroke-opacity="0.12" stroke-width="1.5"/>
+  <circle cx="940" cy="330" r="88" fill="none" stroke="#0078d4" stroke-opacity="0.1" stroke-width="1"/>
+
+  <!-- 左下窗口小装饰 -->
+  <rect x="92" y="452" width="96" height="66" rx="8" fill="none" stroke="#0078d4" stroke-opacity="0.2" stroke-width="1.5" transform="rotate(-8 140 485)"/>
+
+  <!-- Logo：Windows 四窗格 -->
+  <rect x="72" y="64" width="96" height="96" rx="24" fill="url(#brand)"/>
+  <rect x="84" y="76" width="34" height="34" rx="5" fill="#ffffff" opacity="0.95"/>
+  <rect x="122" y="76" width="34" height="34" rx="5" fill="#ffffff" opacity="0.6"/>
+  <rect x="84" y="114" width="34" height="34" rx="5" fill="#ffffff" opacity="0.6"/>
+  <rect x="122" y="114" width="34" height="34" rx="5" fill="#ffffff" opacity="0.85"/>
+
+  <!-- 主标题 -->
+  <text x="72" y="316" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="74" font-weight="800" fill="#f8fafc" letter-spacing="1">dsh-win-toolkit</text>
+
+  <!-- 副标题 -->
+  <text x="72" y="372" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="30" font-weight="500" fill="#94a3b8">Windows-native capability pack for DeepSeek Harness</text>
+
+  <!-- 工具 chips -->
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="21" font-weight="600">
+    <g>
+      <rect x="72" y="508" width="158" height="52" rx="26" fill="url(#chip)" stroke="#1e3a8a" stroke-width="1.5"/>
+      <text x="151" y="541" text-anchor="middle" fill="#93c5fd">clipboard</text>
+    </g>
+    <g>
+      <rect x="246" y="508" width="130" height="52" rx="26" fill="url(#chip)" stroke="#1e3a8a" stroke-width="1.5"/>
+      <text x="311" y="541" text-anchor="middle" fill="#93c5fd">notify</text>
+    </g>
+    <g>
+      <rect x="392" y="508" width="118" height="52" rx="26" fill="url(#chip)" stroke="#1e3a8a" stroke-width="1.5"/>
+      <text x="451" y="541" text-anchor="middle" fill="#93c5fd">hosts</text>
+    </g>
+    <g>
+      <rect x="526" y="508" width="146" height="52" rx="26" fill="url(#chip)" stroke="#1e3a8a" stroke-width="1.5"/>
+      <text x="599" y="541" text-anchor="middle" fill="#93c5fd">netdiag</text>
+    </g>
+    <g>
+      <rect x="688" y="508" width="96" height="52" rx="26" fill="url(#chip)" stroke="#1e3a8a" stroke-width="1.5"/>
+      <text x="736" y="541" text-anchor="middle" fill="#93c5fd">more</text>
+    </g>
+  </g>
+</svg>
