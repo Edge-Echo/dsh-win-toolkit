@@ -1,0 +1,10 @@
+# dsh-win-toolkit — Windows 原生能力包
+# 给 dsh agent 一组 Windows 工具（剪贴板/通知/hosts/网络诊断…）。
+# 工具实现见 src/index.ts；本层只负责把插件挂进树。
+
+- insert:
+    - id: win-toolkit
+      name: 'dsh-win-toolkit'
+      config:
+        # 超时（毫秒）：每次 PowerShell 调用上限
+        psTimeoutMs: 20000
