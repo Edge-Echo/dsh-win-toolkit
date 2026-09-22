@@ -14,7 +14,13 @@
     "powershell",
     "cordis",
     "clipboard",
-    "notify"
+    "notify",
+    "windows-tools",
+    "wsl",
+    "automation",
+    "hosts-file",
+    "notification",
+    "native-tools"
   ],
   "files": [
     "cordis.patch.yml",
