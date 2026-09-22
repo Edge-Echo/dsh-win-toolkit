@@ -18,7 +18,10 @@ Gives your dsh agent real Windows superpowers — clipboard, system notification
 ## Check your environment first
 ```sh
 dsh-win-toolkit doctor
-```n
+```
+
+![dsh-win-toolkit doctor](assets/screenshot-doctor.png)
+
 It verifies the platform, PowerShell, execution policy, clipboard access, WScript.Shell COM and hosts readability — everything the tools rely on.
 
 ## Requirements
@@ -41,6 +44,8 @@ Run `dsh-win-toolkit doctor` to verify all of the above on your machine before b
 | `win_notify` | Show a system popup notification (auto-closes) |
 | `win_hosts_list` | Read the Windows hosts file |
 | `win_netdiag` | DNS resolution + TCP port test for any host |
+
+![dsh-win-toolkit tools](assets/screenshot-tools.png)
 
 ## Install
 
