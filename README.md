@@ -21,6 +21,17 @@ dsh-win-toolkit doctor
 ```n
 It verifies the platform, PowerShell, execution policy, clipboard access, WScript.Shell COM and hosts readability — everything the tools rely on.
 
+## Requirements
+
+| | |
+|---|---|
+| OS | **Windows 10 or 11** — the tools call `powershell.exe` |
+| PowerShell | **5.1+** (the default on Windows 10/11); PowerShell 7 works as well but is not required |
+| Privileges | none for the current tools — everything is read-only except clipboard write and the notification popup |
+| Node | 22+ (for the plugin host) |
+
+Run `dsh-win-toolkit doctor` to verify all of the above on your machine before blaming the plugin.
+
 ## Tools
 
 | Tool | What it does |

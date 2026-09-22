@@ -15,6 +15,17 @@
 
 > English docs: [README.md](README.md).
 
+## 环境要求
+
+| | |
+|---|---|
+| 系统 | **Windows 10 或 11**——工具调用 `powershell.exe` |
+| PowerShell | **5.1+**（Win10/11 自带）；PowerShell 7 也可用，但不是必需 |
+| 权限 | 现有工具都不需要管理员权限——除剪贴板写入和通知弹窗外均为只读 |
+| Node | 22+（插件宿主要求） |
+
+先跑 `dsh-win-toolkit doctor` 在你的机器上验证以上条件，再决定要不要怪插件。
+
 ## 工具
 
 | 工具 | 功能 |
