@@ -15,6 +15,12 @@ Gives your dsh agent real Windows superpowers — clipboard, system notification
 
 > 中文文档见 [README.zh.md](README.zh.md)。
 
+## Check your environment first
+```sh
+dsh-win-toolkit doctor
+```n
+It verifies the platform, PowerShell, execution policy, clipboard access, WScript.Shell COM and hosts readability — everything the tools rely on.
+
 ## Tools
 
 | Tool | What it does |
