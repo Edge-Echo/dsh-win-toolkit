@@ -1,0 +1,7 @@
+5 tools:
+
+  win_clipboard_read     Read the current clipboard text
+  win_clipboard_write    Write text to the clipboard
+  win_notify             Show a system popup notification
+  win_hosts_list         Read the Windows hosts file
+  win_netdiag            DNS resolution + TCP port test for a host
