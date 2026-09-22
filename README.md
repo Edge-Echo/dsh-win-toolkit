@@ -15,6 +15,26 @@ Gives your dsh agent real Windows superpowers — clipboard, system notification
 
 > 中文文档见 [README.zh.md](README.zh.md)。
 
+## Check your environment first
+```sh
+dsh-win-toolkit doctor
+```
+
+![dsh-win-toolkit doctor](assets/screenshot-doctor.png)
+
+It verifies the platform, PowerShell, execution policy, clipboard access, WScript.Shell COM and hosts readability — everything the tools rely on.
+
+## Requirements
+
+| | |
+|---|---|
+| OS | **Windows 10 or 11** — the tools call `powershell.exe` |
+| PowerShell | **5.1+** (the default on Windows 10/11); PowerShell 7 works as well but is not required |
+| Privileges | none for the current tools — everything is read-only except clipboard write and the notification popup |
+| Node | 22+ (for the plugin host) |
+
+Run `dsh-win-toolkit doctor` to verify all of the above on your machine before blaming the plugin.
+
 ## Tools
 
 | Tool | What it does |
@@ -24,6 +44,8 @@ Gives your dsh agent real Windows superpowers — clipboard, system notification
 | `win_notify` | Show a system popup notification (auto-closes) |
 | `win_hosts_list` | Read the Windows hosts file |
 | `win_netdiag` | DNS resolution + TCP port test for any host |
+
+![dsh-win-toolkit tools](assets/screenshot-tools.png)
 
 ## Install
 

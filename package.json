@@ -1,6 +1,6 @@
 {
   "name": "dsh-win-toolkit",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Windows-native capability pack for DeepSeek Harness (dsh): clipboard, notifications, hosts file, network diagnostics and more — safe PowerShell-backed tools for Windows users.",
   "type": "module",
   "license": "MIT",
@@ -42,6 +42,9 @@
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "bin": {
+    "dsh-win-toolkit": "lib/cli.js"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "verify": "node scripts/verify.mjs"

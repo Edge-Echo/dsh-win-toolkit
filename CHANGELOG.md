@@ -1,3 +1,9 @@
+## [0.1.3] - 2026-09-22
+
+### Added
+
+- dsh-win-toolkit CLI: doctor (verifies platform, PowerShell version, execution policy, clipboard access, WScript.Shell COM and hosts readability) and list.
+- Environment checks live in src/env.ts, mirroring the netassist doctor pattern.
 # Changelog
 
 ## [0.1.0] - 2026-08-30
