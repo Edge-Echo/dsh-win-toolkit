@@ -15,6 +15,21 @@ Gives your dsh agent real Windows superpowers — clipboard, system notification
 
 > 中文文档见 [README.zh.md](README.zh.md)。
 
+
+## Feedback
+
+Installs are visible in the download counts; whether this helps is not. If you use it, one line
+about the actual task is worth more than a star — **particularly if it did not work**, which is
+the case that never gets reported:
+
+- what you were trying to do
+- whether it did it
+- what was missing or wrong
+
+[Tell me in an issue](../../issues/new?template=usage.yml) — or if something is already broken,
+just open a normal bug report.
+
+
 ## Check your environment first
 ```sh
 dsh-win-toolkit doctor
