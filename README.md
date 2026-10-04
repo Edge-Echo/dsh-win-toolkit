@@ -1,15 +1,23 @@
 # dsh-win-toolkit
 
+**Let your agent use Windows itself: read the clipboard, raise a notification, inspect the hosts file, test whether a port is open.**
+
+### When you need this
+
+- You copied something and want the agent to read it directly, instead of pasting it into the chat
+- A long task finishes while you are in another window and you want a desktop notification
+- GitHub is unreachable and you want the agent to diagnose it rather than guess
+
+Every value crosses the PowerShell boundary as Base64, so clipboard contents and hostnames cannot inject a command. `doctor` checks the environment before you run into a missing piece.
+
 ![dsh-win-toolkit](https://raw.githubusercontent.com/Edge-Echo/dsh-win-toolkit/main/banner.svg)
 
-> Part of the **dsh-toolkit family**: [dsh-mcp-bridge](https://github.com/Edge-Echo/dsh-mcp-bridge) · [dsh-win-toolkit](https://github.com/Edge-Echo/dsh-win-toolkit) · [dsh-netassist](https://github.com/Edge-Echo/dsh-netassist) · [dsh-driftwatch](https://github.com/Edge-Echo/dsh-driftwatch)
 
 [![npm version](https://img.shields.io/npm/v/dsh-win-toolkit?color=0078d4&logo=npm)](https://www.npmjs.com/package/dsh-win-toolkit)
 [![npm downloads](https://img.shields.io/npm/dm/dsh-win-toolkit?color=6366f1)](https://www.npmjs.com/package/dsh-win-toolkit)
 [![license](https://img.shields.io/npm/l/dsh-win-toolkit?color=0078d4)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/Edge-Echo/dsh-win-toolkit?color=6366f1)](https://github.com/Edge-Echo/dsh-win-toolkit)
 
-**Windows-native capability pack for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh).**
 
 Gives your dsh agent real Windows superpowers — clipboard, system notifications, hosts file inspection, and network diagnostics — backed by safe, parameterized PowerShell. No extra installs, no admin rights required for the current toolset.
 
@@ -28,7 +36,6 @@ the case that never gets reported:
 
 [Tell me in an issue](../../issues/new?template=usage.yml) — or if something is already broken,
 just open a normal bug report.
-
 
 ## Check your environment first
 ```sh
@@ -95,3 +102,16 @@ Every tool runs a short PowerShell snippet through `powershell.exe -NoProfile -N
 - npm: <https://www.npmjs.com/package/dsh-win-toolkit>
 - GitHub: <https://github.com/Edge-Echo/dsh-win-toolkit>
 - License: MIT
+
+## Related
+
+Part of the **dsh-toolkit family** — small, independently useful pieces for
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness):
+
+- [dsh-mcp-bridge](https://github.com/Edge-Echo/dsh-mcp-bridge) — install six curated MCP servers, verified in CI
+- [dsh-win-toolkit](https://github.com/Edge-Echo/dsh-win-toolkit) — clipboard, notifications, hosts, port checks on Windows
+- [dsh-netassist](https://github.com/Edge-Echo/dsh-netassist) — network and proxy diagnosis with a concrete next step
+- [dsh-driftwatch](https://github.com/Edge-Echo/dsh-driftwatch) — behaviour-drift reports between two session logs
+- [dsh-ledger](https://github.com/Edge-Echo/dsh-ledger) — what the agent did to your files, provably unaltered
+- [dsh-release-evidence](https://github.com/Edge-Echo/dsh-release-evidence) — one verifiable artifact per release
+- [mcp-netassist](https://github.com/Edge-Echo/mcp-netassist) — the same network checks as an MCP server, any client

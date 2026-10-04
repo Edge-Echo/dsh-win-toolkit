@@ -1,15 +1,23 @@
 # dsh-win-toolkit
 
+**让 agent 直接用上 Windows：读剪贴板、弹系统通知、看 hosts、测端口通不通。**
+
+### 什么时候需要它
+
+- 你刚复制了一段内容，想让 agent 直接读，而不是粘贴到对话里
+- 长任务跑完了，你在别的窗口，想收到一个系统通知
+- GitHub 连不上，想让 agent 自己查清楚，而不是靠猜
+
+每个值都以 Base64 穿过 PowerShell 边界，剪贴板内容和主机名无法构造出命令注入。`doctor` 会先自检环境，不用等用到时才发现缺东西。
+
 ![dsh-win-toolkit](https://raw.githubusercontent.com/Edge-Echo/dsh-win-toolkit/main/banner.svg)
 
-> Part of the **dsh-toolkit family**: [dsh-mcp-bridge](https://github.com/Edge-Echo/dsh-mcp-bridge) · [dsh-win-toolkit](https://github.com/Edge-Echo/dsh-win-toolkit) · [dsh-netassist](https://github.com/Edge-Echo/dsh-netassist) · [dsh-driftwatch](https://github.com/Edge-Echo/dsh-driftwatch)
 
 [![npm version](https://img.shields.io/npm/v/dsh-win-toolkit?color=0078d4&logo=npm)](https://www.npmjs.com/package/dsh-win-toolkit)
 [![npm downloads](https://img.shields.io/npm/dm/dsh-win-toolkit?color=6366f1)](https://www.npmjs.com/package/dsh-win-toolkit)
 [![license](https://img.shields.io/npm/l/dsh-win-toolkit?color=0078d4)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/Edge-Echo/dsh-win-toolkit?color=6366f1)](https://github.com/Edge-Echo/dsh-win-toolkit)
 
-**面向 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) 的 Windows 原生能力包。**
 
 给 dsh 里的 agent 装上真正的 Windows 技能——剪贴板、系统通知、hosts 文件查看、网络诊断，全部通过安全参数化的 PowerShell 实现。无需额外安装，当前工具集无需管理员权限。
 
@@ -25,7 +33,6 @@
 - 缺什么、哪里不对
 
 [开个 issue 说一句](../../issues/new?template=usage.yml) —— 如果是明确的 bug，直接开普通 issue 就行。
-
 
 ## 环境要求
 
@@ -81,3 +88,15 @@ dsh web   # 重启
 - npm: <https://www.npmjs.com/package/dsh-win-toolkit>
 - GitHub: <https://github.com/Edge-Echo/dsh-win-toolkit>
 - License: MIT
+
+## 相关
+
+属于 **dsh-toolkit 家族** —— 一组各自独立可用的小工具，面向 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)：
+
+- [dsh-mcp-bridge](https://github.com/Edge-Echo/dsh-mcp-bridge) —— 一条命令装好 6 个精选 MCP server，CI 逐个验证
+- [dsh-win-toolkit](https://github.com/Edge-Echo/dsh-win-toolkit) —— Windows 剪贴板、通知、hosts、端口检测
+- [dsh-netassist](https://github.com/Edge-Echo/dsh-netassist) —— 网络与代理诊断，直接告诉你下一步
+- [dsh-driftwatch](https://github.com/Edge-Echo/dsh-driftwatch) —— 两次会话日志的行为漂移报告
+- [dsh-ledger](https://github.com/Edge-Echo/dsh-ledger) —— agent 到底动了哪些文件，且记录不可篡改
+- [dsh-release-evidence](https://github.com/Edge-Echo/dsh-release-evidence) —— 每次发布一个可验证的证据包
+- [mcp-netassist](https://github.com/Edge-Echo/mcp-netassist) —— 同一套网络检查，做成任意 MCP 客户端可用的服务器
