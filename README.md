@@ -1,13 +1,5 @@
 # dsh-win-toolkit
 
-![dsh-win-toolkit](https://raw.githubusercontent.com/Edge-Echo/dsh-win-toolkit/main/banner.svg)
-
-
-[![npm version](https://img.shields.io/npm/v/dsh-win-toolkit?color=0078d4&logo=npm)](https://www.npmjs.com/package/dsh-win-toolkit)
-[![npm downloads](https://img.shields.io/npm/dm/dsh-win-toolkit?color=6366f1)](https://www.npmjs.com/package/dsh-win-toolkit)
-[![license](https://img.shields.io/npm/l/dsh-win-toolkit?color=0078d4)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Edge-Echo/dsh-win-toolkit?color=6366f1)](https://github.com/Edge-Echo/dsh-win-toolkit)
-
 **Let your agent use Windows itself: read the clipboard, raise a notification, inspect the hosts file, test whether a port is open.**
 
 ### When you need this
@@ -17,6 +9,15 @@
 - GitHub is unreachable and you want the agent to diagnose it rather than guess
 
 Every value crosses the PowerShell boundary as Base64, so clipboard contents and hostnames cannot inject a command. `doctor` checks the environment before you run into a missing piece.
+
+![dsh-win-toolkit](https://raw.githubusercontent.com/Edge-Echo/dsh-win-toolkit/main/banner.svg)
+
+
+[![npm version](https://img.shields.io/npm/v/dsh-win-toolkit?color=0078d4&logo=npm)](https://www.npmjs.com/package/dsh-win-toolkit)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-win-toolkit?color=6366f1)](https://www.npmjs.com/package/dsh-win-toolkit)
+[![license](https://img.shields.io/npm/l/dsh-win-toolkit?color=0078d4)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Edge-Echo/dsh-win-toolkit?color=6366f1)](https://github.com/Edge-Echo/dsh-win-toolkit)
+
 
 Gives your dsh agent real Windows superpowers — clipboard, system notifications, hosts file inspection, and network diagnostics — backed by safe, parameterized PowerShell. No extra installs, no admin rights required for the current toolset.
 
@@ -35,7 +36,6 @@ the case that never gets reported:
 
 [Tell me in an issue](../../issues/new?template=usage.yml) — or if something is already broken,
 just open a normal bug report.
-
 
 ## Check your environment first
 ```sh
