@@ -54,6 +54,10 @@
 | `win_notify` | 系统弹窗通知（自动关闭） |
 | `win_hosts_list` | 查看 Windows hosts 文件 |
 | `win_netdiag` | 任意主机的 DNS 解析 + TCP 端口测试 |
+| `win_window_list` | 列出可见窗口：标题、进程、PID |
+| `win_window_focus` | 按标题子串把窗口切到前台 |
+| `win_screenshot` | 截屏保存为 PNG，返回路径与尺寸 |
+| `win_process_list` | 按内存排序的进程列表，可按名称过滤 |
 
 ## 安装
 

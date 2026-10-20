@@ -66,6 +66,10 @@ Run `dsh-win-toolkit doctor` to verify all of the above on your machine before b
 | `win_notify` | Show a system popup notification (auto-closes) |
 | `win_hosts_list` | Read the Windows hosts file |
 | `win_netdiag` | DNS resolution + TCP port test for any host |
+| `win_window_list` | List visible windows: title, process, PID |
+| `win_window_focus` | Bring a window to the front by title substring |
+| `win_screenshot` | Capture the screen to a PNG and return its path and size |
+| `win_process_list` | Top processes by memory, optionally filtered by name |
 
 ![dsh-win-toolkit tools](assets/screenshot-tools.png)
 

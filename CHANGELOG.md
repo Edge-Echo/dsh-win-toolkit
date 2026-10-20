@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.2.0
+
+Four capabilities beyond clipboard and notifications.
+
+- **`win_screenshot`** — captures the whole virtual screen to a PNG and returns the path, size and
+  dimensions. The one visible tool: it makes "the agent looked at the screen" into a file you can
+  open.
+- **`win_window_list` / `win_window_focus`** — list visible windows (title, process, PID) and bring
+  one to the front by a case-insensitive title substring.
+- **`win_process_list`** — top processes by memory, optionally filtered by name.
+
+All four keep the existing input convention: any user-supplied value (a window title, a destination
+path) is embedded as a Base64-decoded PowerShell string expression, so it cannot terminate the
+script it appears in.
+
+The test suite grew from 2 assertions to 14. It now drives the plugin with a fake context, checks
+all nine registrations and their schemas, and executes the read-only tools for real; screenshot
+capture is exercised locally but skipped on CI, where the Windows runner has no guaranteed
+interactive desktop session.
+
 ## [0.1.3] - 2026-09-22
 
 ### Added
