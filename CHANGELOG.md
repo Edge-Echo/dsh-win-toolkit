@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0
+
+**`win_open`** — open a file, folder or http(s) URL with its default application. The target is
+embedded as a Base64-decoded PowerShell string, like every other input in the toolkit.
+
+**`doctor` now checks screen capture.** `win_screenshot` depends on System.Windows.Forms and
+System.Drawing, which Server Core installs and some policies omit; doctor probes the virtual screen
+dimensions and says up front whether screenshots will work, instead of letting the first capture
+fail. On a normal desktop it reports the resolution.
+
+Tests: 14 → 15 assertions (the expected tool set is now ten, including `win_open`).
+
 ## 0.2.0
 
 Four capabilities beyond clipboard and notifications.

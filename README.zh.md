@@ -58,6 +58,7 @@
 | `win_window_focus` | 按标题子串把窗口切到前台 |
 | `win_screenshot` | 截屏保存为 PNG，返回路径与尺寸 |
 | `win_process_list` | 按内存排序的进程列表，可按名称过滤 |
+| `win_open` | 用默认程序打开文件、文件夹或 URL |
 
 ## 安装
 

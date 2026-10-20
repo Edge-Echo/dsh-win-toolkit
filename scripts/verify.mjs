@@ -38,6 +38,7 @@ const EXPECTED = [
   'win_window_focus',
   'win_screenshot',
   'win_process_list',
+  'win_open',
 ]
 const names = registered.map((d) => d.name).sort()
 check('registers every tool', names.length === EXPECTED.length, names.join(', '))

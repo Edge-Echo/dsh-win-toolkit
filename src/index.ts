@@ -482,6 +482,47 @@ export default Object.assign(
     },
   }))
 
+  // ── 10. win_open ──────────────────────────────────────────────
+  ctx.tools.register(defineTool({
+    name: 'win_open',
+    description: 'Open a file, folder or http(s) URL with its default application (Start-Process). Returns the resolved target.',
+    parameters: {
+      target: { type: 'string', description: 'File path, folder, or http(s) URL to open', required: true },
+    },
+    output: {
+      schema: {
+        type: 'object',
+        additionalProperties: false,
+        properties: {
+          opened: { type: 'boolean', required: true },
+          target: { type: 'string', required: true },
+        },
+      },
+      render: (_a, value) => [{ type: 'text', text: `Opened ${value.target}` }],
+      presentationMeta: (_a, value) => value,
+    },
+    presentCall: (args): ToolCallView => ({
+      card: 'generic',
+      title: `Opening ${(args as { target?: string }).target ?? 'target'}`,
+      kind: 'other',
+    }),
+    presentResult: (_a, result): ToolResultView => {
+      const m = meta<{ opened?: boolean; target?: string }>(result)
+      return { card: 'generic', title: m?.opened ? `Opened ${m.target}` : 'Could not open the target' }
+    },
+    async execute(args) {
+      const targetExpr = psStr(b64(args.target))
+      const script = [
+        '$ErrorActionPreference = "Stop"',
+        `$t = ${targetExpr}`,
+        'Start-Process -FilePath $t',
+        '$out = [ordered]@{ opened = $true; target = $t }',
+        '$out | ConvertTo-Json -Compress',
+      ].join('; ')
+      return psJson(script, timeoutMs)
+    },
+  }))
+
   },
   { inject: ['tools'] },
 )

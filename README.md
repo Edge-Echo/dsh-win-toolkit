@@ -70,6 +70,7 @@ Run `dsh-win-toolkit doctor` to verify all of the above on your machine before b
 | `win_window_focus` | Bring a window to the front by title substring |
 | `win_screenshot` | Capture the screen to a PNG and return its path and size |
 | `win_process_list` | Top processes by memory, optionally filtered by name |
+| `win_open` | Open a file, folder or URL with the default application |
 
 ![dsh-win-toolkit tools](assets/screenshot-tools.png)
 
