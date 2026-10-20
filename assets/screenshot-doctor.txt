@@ -2,6 +2,7 @@
 ✔ PowerShell 5.1.22621.2506 available
 ✔ Execution policy: RemoteSigned
 ✔ Clipboard is accessible (win_clipboard_read/write will work)
+✔ Screen capture is available (1280x720) (win_screenshot will work)
 ✔ WScript.Shell COM available (win_notify will work)
 ✔ Hosts file is readable (win_hosts_list will work)
 
