@@ -89,5 +89,37 @@ if (!process.env.CI) {
   console.log('SKIP  win_screenshot (CI runner has no guaranteed desktop session)')
 }
 
+// Error quality: a failing tool must report the cause, not echo the whole PowerShell invocation.
+// This is the shared helper, so it applies to every tool.
+try {
+  await byName.win_open.execute({ target: 'C:/definitely/not/here/nothing.txt' })
+  check('win_open rejects a missing target', false, 'it resolved instead of throwing')
+} catch (err) {
+  const message = String(err.message ?? err)
+  check('win_open rejects a missing target', true)
+  // Locale-independent: the cmdlet name is stable, the OS's error text is not.
+  check('the failure names the cause', /Start-Process/.test(message) && message.length < 400, message.slice(0, 90))
+  check('the failure does not dump the whole command line', !message.includes('-NoProfile'))
+}
+
+// Encoding: PowerShell 5.1 writes OEM-encoded stdout while Node decodes UTF-8, so without forcing
+// the child to UTF-8 every non-ASCII value (a Chinese window title, clipboard text) is corrupted.
+// The clipboard is borrowed and restored so the test does not clobber the user's contents.
+try {
+  const marker = '中文测试 · ünïcode ✓'
+  let previous = ''
+  try {
+    previous = (await byName.win_clipboard_read.execute({})).text ?? ''
+  } catch {
+    /* nothing to preserve */
+  }
+  await byName.win_clipboard_write.execute({ text: marker })
+  const readBack = (await byName.win_clipboard_read.execute({})).text
+  check('non-ASCII text survives the PowerShell boundary', readBack === marker, JSON.stringify(readBack ?? '').slice(0, 70))
+  await byName.win_clipboard_write.execute({ text: previous }).catch(() => {})
+} catch (err) {
+  check('clipboard round-trip executes', false, err.message)
+}
+
 console.log(`\n${failures === 0 ? 'ALL PASS' : `${failures} FAILED`}`)
 process.exit(failures ? 1 : 0)

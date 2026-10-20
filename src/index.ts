@@ -20,15 +20,28 @@ export interface WinToolkitConfig {
 
 async function ps(script: string, timeoutMs: number): Promise<string> {
   try {
+    // PowerShell 5.1 writes its output in the OEM code page, while Node decodes as UTF-8, so any
+    // non-ASCII text (a Chinese window title, clipboard content, a hosts comment) arrives mangled.
+    // Forcing the child's stdout to UTF-8 is the one place that can fix it for every tool.
     const { stdout } = await execFileAsync(
       'powershell.exe',
-      ['-NoProfile', '-NonInteractive', '-Command', script],
+      ['-NoProfile', '-NonInteractive', '-Command', `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; ${script}`],
       { timeout: timeoutMs, windowsHide: true, maxBuffer: 4 * 1024 * 1024 },
     )
     return stdout.trim()
   } catch (err) {
-    const e = err as { message?: string }
-    throw new Error(`PowerShell failed: ${e?.message ?? String(err)}`)
+    // The child's stderr carries the actual cause; error.message is the full invocation, which says
+    // nothing useful and is longer than the message it replaces. PowerShell then decorates the
+    // cause with `+ ~~~~` caret lines and `At line:` / `CategoryInfo` noise, so take the first line
+    // that is actually the message.
+    const e = err as { stderr?: string; message?: string }
+    const detail = (e.stderr ?? '')
+      .split(/\r?\n/)
+      .map((l) => l.trim())
+      .filter((l) => l && !l.startsWith('+') && !/^(At line:|In .*:\d+ char:|CategoryInfo|FullyQualifiedErrorId)/i.test(l))
+      .slice(0, 2)
+      .join(' | ')
+    throw new Error(`PowerShell failed: ${detail || e.message || String(err)}`)
   }
 }
 

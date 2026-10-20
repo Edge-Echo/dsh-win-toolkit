@@ -12,9 +12,11 @@ export const DEFAULT_TIMEOUT_MS = 15000
 
 /** Run one PowerShell script; returns trimmed stdout. */
 export async function ps(script: string, timeoutMs = DEFAULT_TIMEOUT_MS): Promise<string> {
+  // Same UTF-8 forcing as the tool boundary: doctor output includes localized Windows strings, and
+  // the OEM code page would mangle them.
   const { stdout } = await execFileAsync(
     'powershell.exe',
-    ['-NoProfile', '-NonInteractive', '-Command', script],
+    ['-NoProfile', '-NonInteractive', '-Command', `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; ${script}`],
     { timeout: timeoutMs, windowsHide: true, maxBuffer: 4 * 1024 * 1024 },
   )
   return stdout.trim()

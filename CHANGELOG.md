@@ -10,7 +10,17 @@ System.Drawing, which Server Core installs and some policies omit; doctor probes
 dimensions and says up front whether screenshots will work, instead of letting the first capture
 fail. On a normal desktop it reports the resolution.
 
-Tests: 14 → 15 assertions (the expected tool set is now ten, including `win_open`).
+**Fixed: non-ASCII output was corrupted on every tool.** PowerShell 5.1 writes stdout in the OEM
+code page while Node decodes UTF-8, so a Chinese window title, clipboard text or hosts comment came
+back mangled (a round-trip of "中文测试" did not survive). The PowerShell boundary now forces the
+child's stdout to UTF-8, which fixes it once for all tools.
+
+**Fixed: failures reported the whole command line instead of the cause.** `execFile`'s message is the
+entire invocation; the actual error is in the child's stderr, decorated with `+ ~~~` and
+`CategoryInfo` noise. Errors now carry the first real message line and nothing else.
+
+Tests: 14 → 18 assertions, including a clipboard round-trip of non-ASCII text (borrowed and
+restored) and two assertions about the shape of failure messages.
 
 ## 0.2.0
 
